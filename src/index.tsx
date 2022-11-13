@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 // import store from './store'
 import store,{persistedStore} from './store'
 import App from './App'
-import './bootstrap.min.css'
 import { BrowserRouter } from 'react-router-dom';
 import "./i18n";
 import axios from "axios";

@@ -12,7 +12,6 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import ErrorIcon from '@mui/icons-material/Error';
 // Importing Images
 import Background from "../../../assets/images/login-bg.png";
 import ChartImg from "../../../assets/images/svg/Chart.svg";
@@ -46,7 +45,7 @@ interface State {
   showPassword: boolean;
 }
 
-const SetPassword = () => {
+const ForgotPassword = () => {
 
   const [values, setValues] = React.useState<State>({
     amount: '',
@@ -117,87 +116,31 @@ const SetPassword = () => {
     <Box sx={{ flexGrow: 1 }} className='account__form'>
       <div className='form__inner'>
         <Box sx={{ width: 1 }} className='account__form__header'>
-          <h3 className='title'>Set Password</h3>
-          <p className='sub__title'>Generate new password</p>
+          <h3 className='title'>Forgot Password?</h3>
+          <p className='sub__title'>Please enter your registered email Id or number to request reset password</p>
         </Box>
-        <Box sx={{ width: 1 }} className='account__form__error'>
-          <p className="error__msg"><ErrorIcon/>Your password do not match. Please try again</p>
-        </Box>
-        <Box sx={{ flexGrow: 1 }} className='account__form__body'>
+        <Box sx={{ flexGrow: 1, paddingTop: '0 !important', }} className='account__form__body'>
           <form action='#' method='post'>
-            <Box
-              className='input-wrapper success'
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                position: "relative",
-                width: 1,
-                margin: "20px 0px",
-              }}>
-              <InputLabel htmlFor='username' className='label__icon'>
-                 <LockOpenIcon />
-              </InputLabel>
-              <TextField
-                required
-                id='password'
-                label='Password'
-                variant='standard'
-                sx={{ width: 1 }}
-              />
-            </Box>
-
-            <Box
-            className='input-wrapper password-checkHide error'
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                position: "relative",
-                width: 1,
-                margin: "20px 0px",
-              }}>
-
-
-              <InputLabel htmlFor='password' className='label__icon'>
-                <LockOpenIcon />
-              </InputLabel>
-              <TextField
-                required
-                id='password'
-                label='Confirm Password'
-                variant='standard'
-                sx={{ width: 1 }}
-                type={values.showPassword ? 'text' : 'password'}
-                value={values.password}
-                onChange={handleChanges('password')}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <IconButton
-                      className="password-toggle"
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </Box>
-       
-            <Box
-            className='input-wrapper password-checkHide'
-              sx={{
-                display: "flex",
-                alignItems: "flex-end",
-                position: "relative",
-                width: 1,
-                margin: "20px 0px",
-              }}>
-               <a href="#" className="forgot-password">Forgot Password ?</a>
-              </Box>
+          <Box
+                  className='input-wrapper success'
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-end",
+                    position: "relative",
+                    width: 1,
+                    margin: "20px 0px",
+                  }}>
+                  <InputLabel htmlFor='username' className='label__icon'>
+                    <MailOutlineIcon />
+                  </InputLabel>
+                  <TextField
+                    required
+                    id='username'
+                    label='Enter your email ID'
+                    variant='standard'
+                    sx={{ width: 1 }}
+                  />
+                </Box>
             <Box
               sx={{
                 display: "flex",
@@ -207,7 +150,7 @@ const SetPassword = () => {
                 marginTop: '50px',
               }}>
               <ColorButton variant='contained' className='customBtn-01 btn-enable-style'>
-                Done
+                 GET LINK
               </ColorButton>
             </Box>
           </form>
@@ -220,4 +163,4 @@ const SetPassword = () => {
 }
 
 
-export default SetPassword;
+export default ForgotPassword;

@@ -11,8 +11,9 @@ import { Toggle } from './components/Toggle';
 import { useDarkMode } from './themes/useDarkMode';
 import { GlobalStyles, lightTheme, darkTheme } from './themes/globalStyles';
 import styled, { ThemeProvider } from 'styled-components';
-import './scss/app.scss';
+import './assets/sass/global/global.scss';
 import Notfound from "./components/Notfound/Notfound";
+import ForgotPassword from "./components/login/forgot-password/ForgotPassword";
 
 const App = () => {
   const [ theme, toggleTheme ] = useDarkMode();
@@ -27,6 +28,7 @@ const App = () => {
     {/* <Route exact path={process.env.PUBLIC_URL + "/"} ><HomeScreen/></Route> */}
     <Route path="/login" element={<Login/>} />
     <Route path="/setpassword" element={<SetPassword/>} />
+    <Route path="/forgot-password" element={<ForgotPassword/>} />
     <Route path='*' element={<Notfound />}/>
     </Routes>
     <h6 className="mode-text">Mode - {process.env.NODE_ENV} user - {process.env.name}</h6>
